@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+/* Mobile-first button styles */
+/* Primary – Cyan sáng, hợp gradient xanh đậm */
+/* Primary – xanh đậm, không sáng */
+.btn-primary {
+  @apply bg-blue-700 text-white font-medium
+    py-2 px-3 
+    rounded-md text-sm shadow-sm
+    transition-all duration-300 ease-in-out
+    hover:bg-blue-600
+    active:bg-blue-800
+    disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-blue-700
+    disabled:active:bg-blue-700 disabled:shadow-none;
+}
+
+/* Secondary – slate tối, hài hòa nền */
+.btn-secondary {
+  @apply bg-slate-800 text-white font-medium
+    py-2 px-3 
+    rounded-md text-sm shadow-sm
+    transition-all duration-300 ease-in-out
+    hover:bg-slate-700
+    active:bg-slate-900
+    disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-slate-800
+    disabled:active:bg-slate-800 disabled:shadow-none;
+}
+
+/* Danger – đỏ tối, không chói gắt */
+.btn-danger {
+  @apply bg-rose-700 text-white font-medium
+    py-2 px-3 
+    rounded-md text-sm shadow-sm
+    transition-all duration-300 ease-in-out
+    hover:bg-rose-600
+    active:bg-rose-800
+    disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-rose-700
+    disabled:active:bg-rose-700 disabled:shadow-none;
+}
+
+
+/* Animations */
+@keyframes textLoading {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes details-show {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-text-loading {
+  animation: textLoading 1.5s ease-in-out infinite;
+  display: inline-block;
+}
+
+.animate-details-show {
+  animation: details-show 300ms ease-in-out;
+}
+
+@media (max-width: 480px) {
+  .btn-primary,
+  .btn-secondary,
+  .btn-danger {
+    @apply py-1.5 px-2 text-xs;
+  }
+}

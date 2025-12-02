@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 37
+names: ['bat-dau-duong-uu-tien', 'cam-bop-coi', 'cam-di-nguoc-chieu', 'cam-do-xe', 'cam-do-xe-ngay-chan', 'cam-do-xe-ngay-le', 'cam-dung-va-do-xe', 'cam-nguoi-di-bo', 'cam-o-to', 'cam-quay-dau-xe', 'cam-re-phai', 'cam-re-trai', 'cam-xe-2-banh-3-banh', 'cam-xe-3-banh-xe-tho-so-4-banh', 'cam-xe-somi-romooc', 'cam-xe-tai', 'chieu-cao-tinh-khong-thuc-te', 'cho-ngoat-nguy-hiem-ben-phai', 'cho-ngoat-nguy-hiem-ben-trai', 'cong-truong-dang-thi-cong', 'di-cham', 'duong-cam', 'duong-co-go-giam-toc', 'duong-cut', 'duong-mot-chieu', 'duong-nguoi-di-bo-cat-ngang', 'giao-nhau-voi-duong-uu-tien', 'han-che-chieu-cao', 'han-che-trong-luong-xe', 'het-duong-uu-tien', 'huong-phai-di-vong-chuong-ngai-vat', 'khu-vuc-cho-phia-truoc', 'nhieu-cho-ngoat-nguy-hiem-lien-tiep', 'noi-giao-nhau-chay-theo-vong-xuyen', 'noi-giao-nhau-voi-duong-sat-co-rao-chan', 'toc-do-toi-da-cho-phep', 'tre-em-qua-duong']
+
+roboflow:
+  workspace: sngairesearchvn
+  project: tfs-classed-tyk24
+  version: 17
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/sngairesearchvn/tfs-classed-tyk24/dataset/17

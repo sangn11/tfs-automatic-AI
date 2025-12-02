@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme:dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #2a2a2a;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Đảm bảo HTML, BODY và #root chiếm toàn bộ kích thước màn hình */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh; /* Chiếm 100% chiều cao viewport */
+}
+
+body {
+  /* Thay đổi: Sử dụng display: block và text-align: left */
+  display: block; 
+  text-align: left; 
+  
+  @apply leading-relaxed tracking-wide font-bold
+}
