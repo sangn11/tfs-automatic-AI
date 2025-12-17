@@ -1,6 +1,5 @@
-# 🚦 APPLICATION TO AUTOMATICALLY DETECTE AND TRANSLATE TRAFFIC SIGNS FROM PHOTOS AND VIDEOS IN REAL TIME
-# 🚦 Dự án Phát hiện Biển báo Giao thông theo thời gian thực
-# 🚦 KHÓA LUẬN TỐT NGHIỆP
+# 🚦 TFS AUTOMATICALLY IN REAL TIME
+
 ## 💡 Giới thiệu Bài toán (Problem Statement)
 
 ### Tên Dự án: ỨNG DỤNG TỰ ĐỘNG PHÁT HIỆN  VÀ DỊCH BIỂN BÁO GIAO THÔNG TỪ ẢNH , VIDEO THEO THỜI GIAN THỰC
