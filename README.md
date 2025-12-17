@@ -1,4 +1,6 @@
-# 🚦 APPLICATION TO AUTOMATICALLY DETECTE AND TRANSLATE TRAFFIC SIGNS FROM PHOTOS AND VIDEOS IN REAL TIME - Dự án Phát hiện Biển báo Giao thông theo thời gian thực - KHÓA LUẬN TỐT NGHIỆP
+# 🚦 APPLICATION TO AUTOMATICALLY DETECTE AND TRANSLATE TRAFFIC SIGNS FROM PHOTOS AND VIDEOS IN REAL TIME
+# 🚦 Dự án Phát hiện Biển báo Giao thông theo thời gian thực
+# 🚦 KHÓA LUẬN TỐT NGHIỆP
 ## 💡 Giới thiệu Bài toán (Problem Statement)
 
 ### Tên Dự án: ỨNG DỤNG TỰ ĐỘNG PHÁT HIỆN  VÀ DỊCH BIỂN BÁO GIAO THÔNG TỪ ẢNH , VIDEO THEO THỜI GIAN THỰC
@@ -79,3 +81,7 @@ Phần này mô tả cách mô hình tự huấn luyện được tích hợp v�
 | `package.json` | Khai báo các gói phụ thuộc và các lệnh chạy. |
 | `vite.config.js` | Cấu hình cho công cụ đóng gói Vite. |
 | `README.md` | Tài liệu thông tin về dự án này. |
+
+---
+### Do file "TFS_AIAuto" và thư mục "result_train/" chứa dữ liệu lớn nên mình có cập nhật srouce code đầy đủ trong link dưới!
+Link full src: "https://drive.google.com/drive/folders/1QmUGfHSdtY3TCwQYBv_EneZVf3s2CueP?usp=drive_link"
