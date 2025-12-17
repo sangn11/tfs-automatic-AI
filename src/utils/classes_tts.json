@@ -1,223 +1,46 @@
 [
-  {
-    "id": 0,
-    "name": "Bắt đầu đường ưu tiên",
-    "category": "chỉ-dẫn",
-    "priority": 2
-  },
-  {
-    "id": 1,
-    "name": "Cấm bóp còi",
-    "category": "cấm",
-    "priority": 4
-  },
-  {
-    "id": 2,
-    "name": "Cấm đi ngược chiều",
-    "category": "cấm",
-    "priority": 5
-  },
-  {
-    "id": 3,
-    "name": "Cấm đỗ xe",
-    "category": "cấm",
-    "priority": 3
-  },
-  {
-    "id": 4,
-    "name": "Cấm đỗ xe ngày chẵn",
-    "category": "cấm",
-    "priority": 2
-  },
-  {
-    "id": 5,
-    "name": "Cấm đỗ xe ngày lẻ",
-    "category": 2
-  },
-  {
-    "id": 6,
-    "name": "Cấm dừng và đỗ xe",
-    "category": "cấm",
-    "priority": 4
-  },
-  {
-    "id": 7,
-    "name": "Cấm người đi bộ",
-    "category": "cấm",
-    "priority": 4
-  },
-  {
-    "id": 8,
-    "name": "Cấm ô tô",
-    "category": "cấm",
-    "priority": 4
-  },
-  {
-    "id": 9,
-    "name": "Cấm quay đầu xe",
-    "category": "cấm",
-    "priority": 5
-  },
-  {
-    "id": 10,
-    "name": "Cấm rẽ phải",
-    "category": "cấm",
-    "priority": 4
-  },
-  {
-    "id": 11,
-    "name": "Cấm rẽ trái",
-    "category": "cấm",
-    "priority": 4
-  },
-  {
-    "id": 12,
-    "name": "Cấm xe 2 bánh, 3 bánh",
-    "category": "cấm",
-    "priority": 4
-  },
-  {
-    "id": 13,
-    "name": "Cấm xe 3 bánh và xe thô sơ 4 bánh",
-    "category": "cấm",
-    "priority": 3
-  },
-  {
-    "id": 14,
-    "name": "Cấm xe sơ-mi rơ-moóc",
-    "category": "cấm",
-    "priority": 4
-  },
-  {
-    "id": 15,
-    "name": "Cấm xe tải",
-    "category": "cấm",
-    "priority": 4
-  },
-  {
-    "id": 16,
-    "name": "Chiều cao tĩnh không thực tế",
-    "category": "nguy-hiểm",
-    "priority": 3
-  },
-  {
-    "id": 17,
-    "name": "Chỗ ngoặt nguy hiểm bên phải",
-    "category": "nguy-hiểm",
-    "priority": 4
-  },
-  {
-    "id": 18,
-    "name": "Chỗ ngoặt nguy hiểm bên trái",
-    "category": "nguy-hiểm",
-    "priority": 4
-  },
-  {
-    "id": 19,
-    "name": "Công trường đang thi công",
-    "category": "nguy-hiểm",
-    "priority": 5
-  },
-  {
-    "id": 20,
-    "name": "Đi chậm",
-    "category": "chỉ-dẫn",
-    "priority": 3
-  },
-  {
-    "id": 21,
-    "name": "Đường cấm",
-    "category": "cấm",
-    "priority": 5
-  },
-  {
-    "id": 22,
-    "name": "Đường có gờ giảm tốc",
-    "category": "nguy-hiểm",
-    "priority": 2
-  },
-  {
-    "id": 23,
-    "name": "Đường cụt",
-    "category": "chỉ-dẫn",
-    "priority": 2
-  },
-  {
-    "id": 24,
-    "name": "Đường một chiều",
-    "category": "chỉ-dẫn",
-    "priority": 4
-  },
-  {
-    "id": 25,
-    "name": "Đường người đi bộ cắt ngang",
-    "category": "nguy-hiểm",
-    "priority": 3
-  },
-  {
-    "id": 26,
-    "name": "Giao nhau với đường ưu tiên",
-    "category": "nguy-hiểm",
-    "priority": 3
-  },
-  {
-    "id": 27,
-    "name": "Hạn chế chiều cao",
-    "category": "cấm",
-    "priority": 4
-  },
-  {
-    "id": 28,
-    "name": "Hạn chế trọng lượng xe",
-    "category": "cấm",
-    "priority": 4
-  },
-  {
-    "id": 29,
-    "name": "Hết đường ưu tiên",
-    "category": "chỉ-dẫn",
-    "priority": 1
-  },
-  {
-    "id": 30,
-    "name": "Hướng phải đi vòng chướng ngại vật",
-    "category": "chỉ-dẫn",
-    "priority": 2
-  },
-  {
-    "id": 31,
-    "name": "Khu vực chợ phía trước",
-    "category": "nguy-hiểm",
-    "priority": 3
-  },
-  {
-    "id": 32,
-    "name": "Nhiều chỗ ngoặt nguy hiểm liên tiếp",
-    "category": "nguy-hiểm",
-    "priority": 4
-  },
-  {
-    "id": 33,
-    "name": "Nơi giao nhau chạy theo vòng xuyến",
-    "category": "chỉ-dẫn",
-    "priority": 2
-  },
-  {
-    "id": 34,
-    "name": "Nơi giao nhau với đường sắt có rào chắn",
-    "category": "nguy-hiểm",
-    "priority": 5
-  },
-  {
-    "id": 35,
-    "name": "Tốc độ tối đa cho phép",
-    "category": "chỉ-dẫn",
-    "priority": 4
-  },
-  {
-    "id": 36,
-    "name": "Trẻ em qua đường",
-    "category": "nguy-hiểm",
-    "priority": 5
-  }
+  { "id": 0, "name": "Bắt đầu đường ưu tiên", "category": "chỉ-dẫn", "priority": 2 },
+  { "id": 1, "name": "Cấm bóp còi", "category": "cấm", "priority": 4 },
+  { "id": 2, "name": "Cấm đi ngược chiều", "category": "cấm", "priority": 5 },
+  { "id": 3, "name": "Cấm đỗ xe", "category": "cấm", "priority": 3 },
+  { "id": 4, "name": "Cấm đỗ xe ngày chẵn", "category": "cấm", "priority": 2 },
+  { "id": 5, "name": "Cấm đỗ xe ngày lẻ", "category": 2 },
+  { "id": 6, "name": "Cấm dừng và đỗ xe", "category": "cấm", "priority": 4 },
+  { "id": 7, "name": "Cấm người đi bộ", "category": "cấm", "priority": 4 },
+  { "id": 8, "name": "Cấm ô tô", "category": "cấm", "priority": 4 },
+  { "id": 9, "name": "Cấm quay đầu xe", "category": "cấm", "priority": 5 },
+  
+  { "id": 10, "name": "Cấm rẽ phải", "category": "cấm", "priority": 4 },
+  { "id": 11, "name": "Cấm rẽ trái", "category": "cấm", "priority": 4 },
+  { "id": 12, "name": "Cấm xe 2 bánh, 3 bánh", "category": "cấm", "priority": 4 },
+  { "id": 13, "name": "Cấm xe 3 bánh và xe thô sơ 4 bánh", "category": "cấm", "priority": 3 },
+  { "id": 14, "name": "Cấm xe sơ-mi rơ-moóc", "category": "cấm", "priority": 4 },
+  { "id": 15, "name": "Cấm xe tải", "category": "cấm", "priority": 4 },
+
+  { "id": 16, "name": "Chiều cao tĩnh không thực tế", "category": "nguy-hiểm", "priority": 3 },
+  { "id": 17, "name": "Chỗ ngoặt nguy hiểm bên phải", "category": "nguy-hiểm", "priority": 4 },
+  { "id": 18, "name": "Chỗ ngoặt nguy hiểm bên trái", "category": "nguy-hiểm", "priority": 4 },
+  { "id": 19, "name": "Công trường đang thi công", "category": "nguy-hiểm", "priority": 5 },
+  { "id": 20, "name": "Đi chậm", "category": "chỉ-dẫn", "priority": 3 },
+
+  { "id": 21, "name": "Đường cấm", "category": "cấm", "priority": 5 },
+  { "id": 22, "name": "Đường có gờ giảm tốc", "category": "nguy-hiểm", "priority": 2 },
+  { "id": 23, "name": "Đường cụt", "category": "chỉ-dẫn", "priority": 2 },
+  { "id": 24, "name": "Đường một chiều", "category": "chỉ-dẫn", "priority": 4 },
+  { "id": 25, "name": "Đường người đi bộ cắt ngang", "category": "nguy-hiểm", "priority": 3 },
+
+  { "id": 26, "name": "Giao nhau với đường ưu tiên", "category": "nguy-hiểm", "priority": 3 },
+  { "id": 27, "name": "Hạn chế chiều cao", "category": "cấm", "priority": 4 },
+  { "id": 28, "name": "Hạn chế trọng lượng xe", "category": "cấm", "priority": 4 },
+
+  { "id": 29, "name": "Hết đường ưu tiên", "category": "chỉ-dẫn", "priority": 1 },
+  { "id": 30, "name": "Hướng phải đi vòng chướng ngại vật", "category": "chỉ-dẫn", "priority": 2 },
+  { "id": 31, "name": "Khu vực chợ phía trước", "category": "nguy-hiểm", "priority": 3 },
+
+  { "id": 32, "name": "Nhiều chỗ ngoặt nguy hiểm liên tiếp", "category": "nguy-hiểm", "priority": 4 },
+  { "id": 33, "name": "Nơi giao nhau chạy theo vòng xuyến", "category": "chỉ-dẫn", "priority": 2 },
+  { "id": 34, "name": "Nơi giao nhau với đường sắt có rào chắn", "category": "nguy-hiểm", "priority": 5 },
+
+  { "id": 35, "name": "Tốc độ tối đa cho phép", "category": "chỉ-dẫn", "priority": 4 },
+  { "id": 36, "name": "Trẻ em qua đường", "category": "nguy-hiểm", "priority": 5 }
 ]

@@ -18,6 +18,16 @@ Mục tiêu của dự án này là phát triển một ứng dụng web có kh�
 
 ---
 
+
+## 👤 Người Thực hiện
+
+| Vai trò | Tên | Liên hệ |
+| :--- | :--- | :--- |
+| **Sinh viên thực hiện** | **[Nguyễn Phú Sang 21023391 - Đào Văn Nhật 21117081]** | [Email cá nhân: sangn.csdev@gmail.com] |
+| **Đơn vị/Trường** | [IUH - Trường Đại học Công nghiệp Tp.HCM] | [Địa điểm: 12 Nguyễn Văn Bảo] |
+
+---
+
 ## 🔬 Quy trình Mô hình (Model Workflow)
 
 Phần này mô tả cách mô hình tự huấn luyện được tích hợp vào ứng dụng:
@@ -46,16 +56,7 @@ Phần này mô tả cách mô hình tự huấn luyện được tích hợp v�
 | **Front-end** | Vite, [Tên Framework: React/Vue/Svelte] | Xây dựng giao diện người dùng. |
 | **Quản lý gói** | Node.js, Yarn (hoặc npm) | Quản lý các thư viện. |
 
----
 
-## 👤 Người Thực hiện
-
-| Vai trò | Tên | Liên hệ |
-| :--- | :--- | :--- |
-| **Sinh viên thực hiện** | **[Nguyễn Phú Sang 21023391 - Đào Văn Nhật 21117081]** | [Email cá nhân: sangn.csdev@gmail.com] |
-| **Đơn vị/Trường** | [IUH - Trường Đại học Công nghiệp Tp.HCM] | [Địa điểm: 12 Nguyễn Văn Bảo] |
-
----
 
 ## 📅 Tình trạng Dự án (Project Status)
 
@@ -69,8 +70,12 @@ Phần này mô tả cách mô hình tự huấn luyện được tích hợp v�
 
 | Tên File/Thư mục | Mô tả |
 | :--- | :--- |
+| `node_modules/` | Chứa thư viện của note.js. |
 | `src/` | Chứa tất cả mã nguồn chính của ứng dụng Front-end. |
 | `public/` | Chứa tài sản tĩnh và mô hình ONNX đã chuyển đổi. |
+| `dataset/` | Chứa dữ liệu để huấn luyện mô hình. |
+| `result_train/` | Chứa kết quả quá trình mô hình được huấn luyện. |
+| `TFS_AIAuto` | Notebook chứa code Python để tiền xử lý dữ liệu và huấn luyện mô hình. |
 | `convertOnnx.ipynb` | Notebook chứa code Python để chuyển đổi mô hình YOLO11n sang định dạng ONNX. |
 | `package.json` | Khai báo các gói phụ thuộc và các lệnh chạy. |
 | `vite.config.js` | Cấu hình cho công cụ đóng gói Vite. |

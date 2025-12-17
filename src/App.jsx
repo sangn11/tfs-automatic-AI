@@ -20,29 +20,6 @@ const MODEL_CONFIG = {
 // FPT TTS API Key
 const apiKey = 'H80w0Hv4edAPqOi1J8clYXrVQEHzIvOS'
 
-{/*function QRCodeDisplay({ url }) {
-  if (!url) return null;
-
-  return (
-    <div className="w-full bg-gray-800 rounded-xl shadow-lg p-4 mb-4 sm:mb-6 flex flex-col items-center">
-      <h2 className="text-xl font-bold mb-3 text-gray-200 border-b border-gray-700 pb-2 w-full text-center">
-        Access on Mobile
-      </h2>
-      <div className="bg-white p-3 rounded-lg shadow-inner">
-        <div className="w-64 h-64 bg-gray-300 flex items-center justify-center text-sm text-gray-600 font-bold">
-          [QR Code Placeholder]
-          <br/>
-          (Install & Use qrcode.react)
-        </div>
-      </div>
-      <p className="mt-3 text-sm text-gray-400 break-all text-center">
-        Scan this QR code or visit: 
-        <br />
-        <span className="text-violet-400 font-mono text-xs">{url}</span>
-      </p>
-    </div>
-  );
-}*/}
 
 // Settings Components
 function SettingsPanel({
@@ -90,29 +67,11 @@ function SettingsPanel({
 
           <div className="flex flex-col">
             <label className="text-gray-300 mb-1 text-sm font-medium">
-              Model:
+              Model (fixed):
             </label>
-            <select
-              name="model-selector"
-              ref={modelSelectorRef}
-              onChange={(e) => {
-                modelConfigRef.current.model = e.target.value;
-                loadModel();
-              }}
-              disabled={activeFeature !== null}
-              className="p-2 text-sm rounded-md bg-gray-700 text-white border border-gray-600 focus:border-violet-500 focus:ring-2 focus:ring-violet-500 transition-all"
-            >
-              <option value="yolo11n">YOLO11n (2.6M)</option>
-              <option value="yolo11s">YOLO11s (9.4M)</option>
-              <option value="yolo11m">YOLO11m (20.1M)</option>
-              <option value="yolo12n">YOLO12n (2.6M)</option>
-              <option value="yolo12s">YOLO12s (9.3M)</option>
-              {customModels.map((model, index) => (
-                <option key={index} value={model.url}>
-                  {model.name}
-                </option>
-              ))}
-            </select>
+            <div className="p-2 text-sm rounded-md bg-gray-700 text-white border border-gray-600">
+              bestyolov12
+            </div>
           </div>
         </div>
       </div>
@@ -431,7 +390,7 @@ function ControlButtons({
           )}
         </button>
 
-        <button
+        {/*<button
           className="btn-secondary flex items-center justify-center"
           onClick={(e) => {
             const input = document.createElement("input");
@@ -485,7 +444,7 @@ function ControlButtons({
             />
           </svg>
           Add File Class New
-        </button>
+        </button>*/}
       </div>
     </div>
   );
@@ -554,69 +513,45 @@ function ModelStatus({ warnUpTime, inferenceTime, statusMsg, statusColor }) {
   );
 }
 
-function ResultsTable({ details, currentClasses }) {
-  const lastSpokenRef = useRef("");
+function ResultsTable({ details, currentClasses, activeFeature }) {
+const lastPlayedRef = useRef(null);
+  const blockRef = useRef(false);
 
-  useEffect(() => {
-    if (details.length === 0) return;
+useEffect(() => {
+  if (details.length === 0) return;
 
-    // 1) Enrich details với name, priority, category
-    const enriched = details.map(item => {
-      const info = classes_tts.find(c => c.id === item.class_idx);
-      return {
-        ...item,
-        name: info?.name || `Biển ${item.class_idx}`,
-        priority: info?.priority || 1,
-        category: info?.category || "Khác"
-      };
-    });
-
-    // 2) Sắp xếp giảm dần theo priority
-    enriched.sort((a, b) => b.priority - a.priority);
-
-    // 3) Lấy tối đa 3 biển quan trọng nhất
-    const top = enriched.slice(0, 3);
-    const names = top.map(x => x.name).join(", ");
-
-    // 4) Ngăn đọc lặp
-    if (names === lastSpokenRef.current) return;
-    lastSpokenRef.current = names;
-
-    // 5) Tạo câu đọc
-    const text =
-      top.length === 1
-        ? `Phía trước có biển ${top[0].name}.`
-        : `Phía trước có ${top.length} biển báo quan trọng: ${names}.`;
-
-    // 6) Gọi FPT TTS API async
-    const fetchAndPlay = async () => {
-      try {
-        const res = await fetch("https://api.fpt.ai/hmi/tts/v5", {
-          method: "POST",
-          headers: {
-            "api-key": apiKey,
-            "speed": "1",
-            "voice": "minhquang",
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-          body: text,
-        });
-        const data = await res.json();
-
-        if (data.error === 0 && data.async) {
-          // Phát audio từ link async
-          const audio = new Audio(data.async);
-          audio.play();
-        } else {
-          console.error("FPT TTS error:", data.message);
-        }
-      } catch (err) {
-        console.error("FPT TTS fetch error:", err);
-      }
+  const enriched = details.map(item => {
+    const info = classes_tts.find(c => c.id === item.class_idx);
+    return {
+      ...item,
+      priority: info?.priority || 1,
     };
+  });
 
-    fetchAndPlay();
-  }, [details]);
+  enriched.sort((a, b) => b.priority - a.priority);
+  const top = enriched[0];
+  const id = top.class_idx;
+
+  if (activeFeature === "image") {
+    // Image: luôn đọc mỗi lần mở/đổi ảnh
+    lastPlayedRef.current = null;
+    const audio = new Audio(`http://localhost:5173/yolo-object-detection-onnxruntime-web/tts_mp3/${id}.mp3`);
+    audio.play();
+  } else if (activeFeature === "camera" || activeFeature === "video") {
+    // Camera/Video: đọc nếu khác biển vừa đọc và không block
+    if (blockRef.current || lastPlayedRef.current === id) return;
+
+    lastPlayedRef.current = id;
+
+    const audio = new Audio(`http://localhost:5173/yolo-object-detection-onnxruntime-web/tts_mp3/${id}.mp3`);
+    audio.play();
+
+    blockRef.current = true;
+    setTimeout(() => (blockRef.current = false), 2000); // block 2s
+  }
+
+}, [details, activeFeature]);
+
   return (
  <div className="w-full bg-gray-800 rounded-xl shadow-lg p-4 sm:p-5 mb-4 sm:mb-6">
 
@@ -1141,7 +1076,7 @@ function App() {
     <div className="w-full px-2 sm:px-4 lg:px-6 py-4 sm:py-6 bg-linear-to-br from-slate-900 via-blue-900 to-slate-900 min-h-screen">
       <div className="w-full">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-4 sm:mb-6 text-white">
-          <span className="block sm:inline">YOLO - </span>
+          <span className="block sm:inline">System - </span>
           <span className="bg-gradient-to-r from-violet-500 to-fuchsia-500 bg-clip-text text-transparent block sm:inline">
             {" "}
             Automatic Traffic sign Detection
@@ -1186,6 +1121,7 @@ function App() {
         <ResultsTable
           details={details}
           currentClasses={modelConfigRef.current.classes.classes}
+          activeFeature={activeFeature}
         />
 
         <ModelStatus
