@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+TFS_AIAutoVF.ipynb
+result_train/
